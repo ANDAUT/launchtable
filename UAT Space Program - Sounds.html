@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--This is a webpage made to fulfil assign for csc102 as per 
+    https://synchronic.uat.edu/courses/3730/assignments/131468?return_to=https%3A%2F%2Fsynchronic.uat.edu%2Fcalendar%23view_name%3Dmonth%26view_start%3D2020-10-13
+
+
+<html>
+
+<head>
+    <!-links my javascript file to the html file-->
+    <script src="code_spaceSound.js"></script>
+    <!--This links my css file to this html-->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!--This is where my title for the webpage goes-->
+
+    <title>
+        UAT Space Page
+    </title>
+
+    <style>
+        body
+        {
+            background: rgb(166, 166, 166);
+            background: linear-gradient(0deg, rgb(25, 0, 90) 0%, rgb(0, 0, 0) 50%);
+        }     
+          
+        img
+        {   display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 100%;}
+        button
+        {border-radius: 100%;
+            width:5%;
+    margin-left:0%;
+    margin-right:0%;}
+        h1
+        {text-align: center;}
+        p
+        {text-align: center;}
+        p
+        {color: rgb(255, 255, 255);}
+
+    </style>
+</head>
+
+<body>
+    <!--This is a table that demonstrates time elapsed after requesting a weather report, and the state of the weather at the point of receiving said report-->
+    <table class="tableTop">
+        <tr>
+            <!--tr defines a row in a table-->
+            <td><img src="UATspaceLogo-2.jpg" /></td>
+            <td>
+                <h1>
+                    UAT Space Program
+                </h1>
+            </td>
+        </tr>
+    </table>
+    <table id="data", border="2" width="70%"  style="color: rgb(255, 255, 255);">
+        <col style="width: 35%;">
+        <col style="width: 35%;">
+        <thead>
+            <tr style="font-family: fantasy;">
+                <th>Available Values</th>
+                <th>Results</th>
+            </tr>
+        </thead>
+        <tbody style="font-weight: bolder;">
+            <tr id="seconds"><td>Time Elapsed:</td><td>0 seconds</td></tr>
+            <tr id="longitude"><td>Weather:</td><td>...</td></tr>
+        </tbody>
+    </table>    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--This dialogue informs the user of how long they must wait after pushing Start, and both buttons will ghost in order to give the weather report time to come in.-->
+    <h3 id="weatherKey", style="color: rgb(255,255,255);"> Push start, wait 5 seconds, and then push stop for a weather report</h3>
+    <button onclick="start();" class="funWithButtons" id="startButton">Start</button>
+    <button class="funWithButtons" onclick="stop();" id="stopButton" disabled=true>Stop</button>
+    <br>
+    <br>
+    <!--Just like the previous assignments, the countdown returns, but with a little extra sound.  Of course, there's dialogue that lets people know to wait after a weather report, buuut if they really want to, they can launch without a report.-->
+    <h3 style="color: rgb(255,255,255)">If the weather's clear, prepare for takeoff!</h3>
+    <button onclick="whileCount()" class="funWithButtons" id="rocketButton">Initiate Rocket</button>
+    <br>
+    <h3 id="countdownTimer", style="color: rgb(255, 255, 255);">The countdown starts here...</h3>
+
+</body>
+
+</html>
